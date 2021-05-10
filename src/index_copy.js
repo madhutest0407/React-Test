@@ -5,7 +5,7 @@ let count = 0;
 const addOne = () => {
   count++;
   reRenderApp();
-  window.console.log("addone");
+  window.console.log("addone1");
 };
 const minusOne = () => {
   count--;
