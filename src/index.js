@@ -1,5 +1,6 @@
 import ReactDOM from "react-dom";
 import { React, Component } from "react";
+const optValue = ["firstOne", "secondOne"];
 
 class Header extends Component {
   render() {
@@ -24,21 +25,17 @@ class Action extends Component {
 
 class Option extends Component {
   render() {
-    return (
-      <ol>
-        <li>Apple</li>
-        <li>Banana</li>
-      </ol>
-    );
+    return <div>{this.props.val}</div>;
   }
 }
 
 class Options extends Component {
   render() {
+    const { value } = this.props;
     return (
       <div>
         Here are the Options!
-        <Option />
+        {value && value.map((val) => <Option key={val} val={val} />)}
       </div>
     );
   }
@@ -61,7 +58,7 @@ class IndecisionApp extends Component {
       <div>
         <Header />
         <Action />
-        <Options />
+        <Options value={optValue} />
         <AddOption />
       </div>
     );
