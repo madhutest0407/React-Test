@@ -30,11 +30,17 @@ class Option extends Component {
 }
 
 class Options extends Component {
+  removeAll() {
+    alert("Remove all items");
+  }
   render() {
     const { value } = this.props;
     return (
       <div>
-        Here are the Options!
+        <div>
+          <button onClick={this.removeAll}>Remove All </button>
+        </div>
+        <p>Here are the Options!</p>
         {value && value.map((val) => <Option key={val} val={val} />)}
       </div>
     );
