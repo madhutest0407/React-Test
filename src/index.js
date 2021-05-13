@@ -48,10 +48,17 @@ class Options extends Component {
 }
 
 class AddOption extends Component {
+  handleFormSubmit(e) {
+    e.preventDefault();
+    const optVal = e.target.elements.options.value.trim();
+    if (optVal) {
+      alert(optVal);
+    }
+  }
   render() {
     return (
-      <form>
-        <input type="text" placeholder="Add your options" />
+      <form onSubmit={this.handleFormSubmit}>
+        <input type="text" name="options" placeholder="Add your options" />
         <button>Add</button>
       </form>
     );
