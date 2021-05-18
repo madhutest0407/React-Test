@@ -49,7 +49,7 @@ class Options extends Component {
 
 class AddOption extends Component {
   handleFormSubmit(e) {
-    e.preventDefault();
+    e.preventDefault(); // Reason: Each form submit will trigger a page refresh
     const optVal = e.target.elements.options.value.trim();
     if (optVal) {
       alert(optVal);
